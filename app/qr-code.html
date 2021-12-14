@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product's QR Code</title>
+	<link href="./app.css" rel="stylesheet" type="text/css">
+	<script src="http://ajax.googleapi.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="./app.js"></script>
+	<script type="text/javascript">
+		function generateBarCode(){
+			var lid = $('#text').val();
+			var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + lid + '&amp;size=20x20';
+			$('#barcode').attr('src', url);
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="text" value="Lot Number" style="Width:20%; transform: translate(110%, 50%)" onblur="generateBarCode();" />
+	<img id="barcode" src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp; size=100x100" title="Here you find the product's QR code" width="50" height="50" />
+
+</body>
+</html>
